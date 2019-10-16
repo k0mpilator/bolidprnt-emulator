@@ -1,4 +1,4 @@
-module bolidprnt-emulator
+module github.com/k0mpilator/bolidprnt-emulator
 
 go 1.12
 

@@ -13,10 +13,7 @@ type Conf struct {
 	Baud        int
 	ReadTimeout time.Duration
 	Size        byte
-	Acct        int            `yaml:"acct"`
-	Mt          int            `yaml:"mt"`
-	AdemcoCodes map[string]int `yaml:"ademco-code"`
-	Qualifiers  map[string]int `yaml:"qualifiers"`
+	Qualifiers  map[string]string `yaml:"qualifiers"`
 }
 
 func NewConfig(filename string) Conf {
