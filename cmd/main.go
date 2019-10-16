@@ -6,16 +6,21 @@ import (
 	"math/rand"
 	"time"
 
+	"github.com/k0mpilator/bolidprnt-emulator/internal/config"
 	"github.com/tarm/serial"
 )
 
 func main() {
 
+	// Read config yaml
+	conf := config.NewConfig("config.yml")
+
+	// Serial port settings
 	config := &serial.Config{
-		Name:        "/dev/ttyUSB0",
-		Baud:        9600,
-		ReadTimeout: 1,
-		Size:        8,
+		Name:        conf.PortName,
+		Baud:        conf.Baud,
+		ReadTimeout: conf.ReadTimeout,
+		Size:        conf.Size,
 	}
 
 	s, err := serial.OpenPort(config)
