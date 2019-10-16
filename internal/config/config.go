@@ -13,7 +13,7 @@ type Conf struct {
 	Baud        int
 	ReadTimeout time.Duration
 	Size        byte
-	Qualifiers  map[string]string `yaml:"qualifiers"`
+	Qualifiers  []string `yaml:"qualifiers"`
 }
 
 func NewConfig(filename string) Conf {
