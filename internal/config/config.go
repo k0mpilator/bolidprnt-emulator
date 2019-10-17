@@ -13,6 +13,7 @@ type Conf struct {
 	Baud        int
 	ReadTimeout time.Duration
 	Size        byte
+	Detector    []string `yaml:"detector"`
 	Qualifiers  []string `yaml:"qualifiers"`
 }
 

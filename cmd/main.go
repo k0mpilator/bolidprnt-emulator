@@ -32,14 +32,15 @@ func main() {
 	for {
 		d := rand.Intn(10)
 		t := time.Now().Format("01.02 15:04:05")
-		e := conf.Qualifiers[rand.Intn(len(conf.Qualifiers))]
+		qf := conf.Qualifiers[rand.Intn(len(conf.Qualifiers))]
+		dt := conf.Detector[rand.Intn(len(conf.Detector))]
 		//sec := section[rand.Intn(len(section))]
-		b := []byte(fmt.Sprintf("|%s|%s|  %v    |   %v|0|№ ПАРОЛЯ: 7     |\r\n", t, e, d, d))
+		b := []byte(fmt.Sprintf("|%s|%s|  %v    |   %v|%s|№ ПАРОЛЯ: 7     |\r\n", t, qf, d, d, dt))
 		_, err := s.Write(b)
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("|%s|%s|  %v    |   %v|0|№ ПАРОЛЯ: 7     |\r\n", t, e, d, d)
+		fmt.Printf("|%s|%s|  %v    |   %v|%s|№ ПАРОЛЯ: 7     |\r\n", t, qf, d, d, dt)
 		time.Sleep(time.Second * 1)
 	}
 }
